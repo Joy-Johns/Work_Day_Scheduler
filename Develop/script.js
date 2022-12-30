@@ -32,3 +32,20 @@ function displayTime() {
 
 displayTime();
 setInterval(displayTime, 1000);
+
+//I create a function that checks the time and if the seconds are equal to 30, print to console log.
+
+function thirty(){
+  var seconds = dayjs().format("ss");
+  //console.log(seconds)
+  if ((seconds === "29")||(seconds === "59"))
+  {
+    console.log('myFunction Called')
+  }
+}
+
+thirty();
+
+setInterval(function(){
+  thirty()
+}, 1000)
