@@ -21,6 +21,14 @@ $(function () {
   //
   // TO-DO (4): Add code to display the current date in the header of the page.
     //I referenced activity 25 (DayJS-Format) for these lines of code.
-  var today = dayjs(); 
-  $("#currentDay").text(today.format("MMM D, YYYY"));
+
 });
+//I changed my mind & decided to use miniproject's function as inspo for this display. Using military time will make time conversion easier.
+var timeDisplayEl = $("#currentDay");
+function displayTime() {
+  var rightNow = dayjs().format("MMM DD, YYYY [at] HH:mm:ss ");
+  timeDisplayEl.text(rightNow);
+}
+
+displayTime();
+setInterval(displayTime, 1000);
