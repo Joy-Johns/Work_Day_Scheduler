@@ -24,8 +24,6 @@ $(function () {
 
 });
 
-
-
 function saveTask(hour) {
   var yourword = document.getElementById("myTextarea" + hour).value; //this is my text
   var hours = parseInt(dayjs().format("HH")); //Use HH for hours, but use mm for minutes and ss for seconds.
