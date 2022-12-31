@@ -64,13 +64,16 @@ function thirty(){
     var last_2digits = parseInt(last_2chars); //Convert string to a number
     //console.log(last_2chars);
   }
-
-  
-
 }
+//Create a function that will call an argument. One argument for the hour and another argument for IDs 
+function findHour(hour,id) {
+  console.log("This is the hour " + hour);
+  console.log("This is the ID " +id);
+}
+findHour(12,"Joy");
 
 thirty();
 
 setInterval(function(){
   thirty()
-}, 1000)
+}, 1000);
