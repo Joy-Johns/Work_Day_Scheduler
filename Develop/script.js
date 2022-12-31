@@ -36,12 +36,37 @@ setInterval(displayTime, 1000);
 //I create a function that checks the time and if the seconds are equal to 30, print to console log.
 
 function thirty(){
-  var seconds = dayjs().format("ss");
+  var seconds = parseInt(dayjs().format("ss"));
   //console.log(seconds)
-  if ((seconds === "29")||(seconds === "59"))
+  
+  if (seconds === 29)
   {
-    console.log('myFunction Called')
+    console.log('present')
+    document.getElementById("hour-09").className = "row time-block present"
   }
+  else if (seconds === 59)
+  {
+    document.getElementById("hour-09").className = "row time-block past"
+    console.log('past')
+  }
+  //debugger;
+
+  ///Get all element by ids of the class row (inside of index.html). This is so that my static calendar works with my changing hours
+
+  var ids_hours = document.getElementsByClassName('row');
+  var hours = ids_hours.length;  
+  console.log(hours); //This should log the length/number of the hours in a workday
+
+  for (var i=0; i<hours; i++) {//For Loop time (so that it updates every single hour of the workday)
+  
+    console.log(ids_hours[i].id);  //for the first cycle (hour of the day: hour-09)
+    var last_2chars = ids_hours[i].id.slice(-2); //Pluck the last 2 characters from "hour-09" string...which is 09)
+    var last_2digits = parseInt(last_2chars); //Convert string to a number
+    //console.log(last_2chars);
+  }
+
+  
+
 }
 
 thirty();
