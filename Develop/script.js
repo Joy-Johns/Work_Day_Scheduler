@@ -33,8 +33,32 @@ function displayTime() {
 displayTime();
 setInterval(displayTime, 1000);
 
-//I create a function that checks the time and if the seconds are equal to 30, print to console log.
+//Create a function that will call an argument. One argument for the hour and another argument for IDs 
+function findHour(last_2digits, id) {
 
+  console.log("This is the hour " + last_2digits);
+  console.log("This is the ID " +id);
+  var minutes = parseInt(dayjs().format("HH")); //Use HH for hours, but use mm for minutes and ss for seconds.
+  
+  if (minutes === last_2digits)
+  {
+    console.log('present')
+    document.getElementById(id).className = "row time-block present"
+  }
+  else if (minutes > last_2digits)
+  {
+    document.getElementById(id).className = "row time-block past"
+    console.log('past')
+  }
+  else if (minutes < last_2digits)
+  {
+    document.getElementById(id).className = "row time-block future"
+    console.log('future')
+  }
+
+}
+//I create a function that checks the time and if the seconds are equal to 30, print to console log.
+//THIS IS FOR TESTING PURPOSES~~~~~~~~~~~~~~~~~~~~~~~
 function thirty(){
   var seconds = parseInt(dayjs().format("ss"));
   //console.log(seconds)
@@ -49,6 +73,7 @@ function thirty(){
     document.getElementById("hour-09").className = "row time-block past"
     console.log('past')
   }
+  //THIS IS FOR TESTING PURPOSES~~~~~~~~~~~~~~~~~~~~~~~
   //debugger;
 
   ///Get all element by ids of the class row (inside of index.html). This is so that my static calendar works with my changing hours
@@ -59,18 +84,14 @@ function thirty(){
 
   for (var i=0; i<hours; i++) {//For Loop time (so that it updates every single hour of the workday)
   
-    console.log(ids_hours[i].id);  //for the first cycle (hour of the day: hour-09)
+    //console.log(ids_hours[i].id);  //for the first cycle (hour of the day: hour-09)
     var last_2chars = ids_hours[i].id.slice(-2); //Pluck the last 2 characters from "hour-09" string...which is 09)
     var last_2digits = parseInt(last_2chars); //Convert string to a number
+    findHour(last_2digits, ids_hours[i].id);
     //console.log(last_2chars);
   }
 }
-//Create a function that will call an argument. One argument for the hour and another argument for IDs 
-function findHour(hour,id) {
-  console.log("This is the hour " + hour);
-  console.log("This is the ID " +id);
-}
-findHour(12,"Joy");
+
 
 thirty();
 
