@@ -18,7 +18,7 @@
 ## Usage
 
 <br>This code can be used for ideas on how to create a scheduler for a typical 8-hour work day, but if there are any suggestions, feel free to let me know.</br>
-<br>You can also view this in published form at the following link: https://joy-johns.github.io/Joycell-Challenge-3/</br>
+<br>You can also view this in published form at the following link: https://joy-johns.github.io/Work_Day_Scheduler/</br>
 <br>Please see the attachment for a picture of the Work Day Scheduler</br>
 ![alt text](Assets/WorkDayScheduler.png)
 
