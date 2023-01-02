@@ -21,6 +21,12 @@ $(function () {
   //
   // TO-DO (4): Add code to display the current date in the header of the page.
     //I referenced activity 25 (DayJS-Format) for these lines of code.
+  
+    init(); //start it up (upon refreshing)
+
+    setInterval(function(){
+      thirty()
+    }, 1000); //every second it is going to check if it in the past, present or future
 
 });
 
@@ -111,9 +117,3 @@ function init(){ //this loop will start creating all of the buttons from 9-17 (w
 
   }
 }
-
-init(); //start it up (upon refreshing)
-
-setInterval(function(){
-  thirty()
-}, 60000); //1 minute to write & save work
